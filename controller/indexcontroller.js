@@ -3,7 +3,7 @@
 const { crudOPERATIONS } = require('../models/indexmodel')
 function GET(req, res, next){
   crudOPERATIONS.find({}, '', function(err,records){
-    if(err)console.log(err);
+    if(err) console.log(err);
     res.json({
       successful:true,
       records
@@ -17,7 +17,7 @@ function indexController(req, res, next) {
 
 
 function handlePost(request, response) {
-    let  { name, phoneNumber, year } = request.body
+    let  { name, phoneNumber, year } = request.body;
     
     
     const addRecord = new crudOPERATIONS({
@@ -27,7 +27,6 @@ function handlePost(request, response) {
     })
     
     addRecord.save((err, newRecord)=>{
-        if(err)console.log(err);
         
         response.json({
             successful:true,
@@ -35,6 +34,7 @@ function handlePost(request, response) {
         })
       
     })
+    // console.log(request.body);
 //   response.send('this is a POST request');
 }
 function PUT(req, res, next) {

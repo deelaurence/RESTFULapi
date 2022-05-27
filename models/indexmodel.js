@@ -9,4 +9,4 @@ const crudSchema = new Schema({
 })
 
 const crudOPERATIONS= mongoose.model('crudeOP', crudSchema)
-module.exports= {crudOPERATIONS}
+module.exports= { crudOPERATIONS }
